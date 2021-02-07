@@ -1,0 +1,40 @@
+.button{
+    &.primary,
+    &.secondary {
+      border: 2px solid #000;
+      border-radius: 5px;
+      font-weight: 700;
+      margin: 0;
+      height: 56px;
+      font-size: 1rem;
+    }
+    &.primary {
+      background-color: #3adb76;
+      color: #000;
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+        color: #000;
+      }
+      &:disabled,
+      &:disabled:hover {
+        color: #000;
+        background-color: #3adb76;
+      }
+    }
+    &.secondary {
+      background-color: #000;
+      color: #fff;
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #fff;
+        color: #000;
+      }
+      &.active {
+        background-color: #9d9dff; 
+        color: #000;
+      }
+    }
+  }

@@ -1,0 +1,54 @@
+
+.risk-factor-select {
+    .risk-factor--list {
+      margin-bottom: 0;
+      li.button {
+        font-size: 1.1rem;
+        margin: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+        
+        @media screen and (min-width: 40em) {
+          width: 54px;
+          font-size: 1.5rem;
+        }  
+      }
+    }
+  
+    .risk-factor--levels {
+      padding: 5px 0;
+    }
+  
+    .risk-factor--button {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 10px; 
+
+      @media screen and (min-width: 40em) {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    }
+  }
+
+  .risk-level-overview {
+    tbody {
+      tr {
+        &:hover {
+          cursor: pointer;
+          td {
+            background-color: #c4e2ff;
+          }
+        }
+  
+      }
+    }
+  }
+  
+  .arc {
+    cursor: pointer;
+  }

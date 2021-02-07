@@ -1,0 +1,27 @@
+.ideal-overview {
+    margin: 10px 0;
+
+    .view-button {
+      img {
+        cursor: pointer;
+        border: 3px solid #000;
+        border-radius: 8px;
+        width: 60px;
+        height: 52px;
+      }
+    }
+  }
+
+  .recommended-portfolio-table {
+    tr {
+      &.active {
+        background-color: #9d9dff;
+      }
+      th {
+        text-align: center;
+      }
+      td {
+        text-align: right;
+      }
+    }
+  }

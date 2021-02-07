@@ -1,0 +1,70 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+[type='text'],
+[type='number'] {
+  border-radius: 5px;
+  border: 1px solid #000;
+  &:disabled {
+    background-color: #f3f3f3;
+    cursor: default;
+  }
+}
+.grid-container {
+  max-width: rem-calc(900);
+}
+
+.highlight-animation {
+  animation: highlightAnimation 0.7s;
+  animation-iteration-count: 3;
+}
+
+@keyframes highlightAnimation {
+  50% { 
+    border-color: #c4e2ff;
+    box-shadow: 0 0 10px #c4e2ff;
+  }
+}
+
+h1 {
+  font-size: 2.2em;
+  font-weight: 500;
+  
+  @media screen and (max-width: 30em) {
+    font-size: 1.3rem;
+  } 
+
+  @media #{$medium-up} {
+    font-size: 3.5rem;
+  }  
+}
+h2 {
+  font-size: 1.2rem;
+  margin-top: 25px;
+
+  @media #{$medium-up} {
+    font-size: 1.5rem;
+  }
+}
+h3 {
+  font-size: 1.2rem;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+h2,
+h3 {
+  font-weight: 700;
+}
+
+.color-success {
+  color: green;
+}
+
+.color-error {
+  color: red;
+}
+
+.color-info {
+  color: blue;
+}

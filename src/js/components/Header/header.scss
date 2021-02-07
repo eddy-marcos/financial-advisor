@@ -1,0 +1,17 @@
+.header {
+  height: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #9d9dff, #fff);
+
+  a {
+    position: absolute;
+    width: 50px;
+    margin-left: 25px;
+    margin-top: 25px;
+    left: 0;
+    top: 20px;
+  }
+}
