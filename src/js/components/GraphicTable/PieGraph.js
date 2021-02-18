@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import { unCamelCase, uppercaseFirstLetter } from '../utils.js';
 
 const PieGraph = (props) => {
+  // get props data
   const height = props.height;
   const width = props.width;
   const innerRadius = props.innerRadius;
@@ -12,26 +13,31 @@ const PieGraph = (props) => {
   let shouldDisplayDefault = props.shouldDisplayDefault;
   let data = props.data;
   
+  // Compute the position of each group on the pie
   let pie = d3.pie()
     .value(function(d) { return d.value });
+
   let filteredData = d3.entries(
       data
     ).filter(category => {
       return category.value;
     });
-  let data_ready = pie(filteredData);
-  
-  
+
+  let dataReady = pie(filteredData);
   const svgRef = useRef();
   let arcGenerator = d3.arc()
     .innerRadius(innerRadius)
     .outerRadius(outerRadius)
 
-  useEffect(() => {
+  useEffect(() => {     
     d3.select(".circle-wrapper").remove();
     let svg = d3.select(svgRef.current)
-      .attr("width", width)
-      .attr("height", height)
+    /* Force uniform scaling.
+    Align the <min-x> of the element's viewBox with the smallest X value of the viewport.
+    Align the <min-y> of the element's viewBox with the smallest Y value of the viewport. */
+      .attr("preserveAspectRatio", "xMinYMin meet")
+      .attr("viewBox", `0 0 ${height} ${width}`)
+      .classed("svg-content", true)
       .append("g")
         .attr("class","circle-wrapper")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
@@ -40,6 +46,7 @@ const PieGraph = (props) => {
         .attr("x", "0")
         .attr("y", "-1.2em")
         .style("text-anchor", "middle")
+        .attr("class", "font")
         .attr("fill", "#000")
     centeredText
       .append("tspan")
@@ -53,7 +60,7 @@ const PieGraph = (props) => {
         .html("PORTFOLIO")
 
     let g = svg.selectAll("circle")
-      .data(data_ready)
+      .data(dataReady)
       .enter()
       .append('g')
         .attr("class", "arc");
@@ -88,6 +95,7 @@ const PieGraph = (props) => {
         })
         .style("text-anchor", "middle")
         .attr("fill", "#fff")
+        .classed('font', true)
         .text(function(d,i) { 
           return shouldDisplayDefault 
             ? defaultText 
@@ -97,9 +105,9 @@ const PieGraph = (props) => {
   }, [props.data, svgRef])
 
   return (
-    <>
+    <div className="donut-container">
       <svg ref={svgRef} ></svg>
-    </>
+    </div>
   )
 }
 
