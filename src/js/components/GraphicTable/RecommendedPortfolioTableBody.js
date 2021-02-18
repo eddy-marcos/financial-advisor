@@ -3,11 +3,14 @@ import { categories } from '../../data';
 
 const RecommendedPortfolioTableBody = (props) => {
 
+  // level: each row values
   const generateLevelRows = (level) => {
     return categories.map(category => {
       return <td key={category.key}>{level[category.key]}</td>;
     })
   }
+
+  // props.riskLevels: table default values
 
   return (
     <tbody>

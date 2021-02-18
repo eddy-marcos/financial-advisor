@@ -57,8 +57,8 @@ const RecommendedTransfers = (props) => {
 
   function printRecommendedTransfers(steps) {
     return (
-      <td className="large-col risk-calculator--recommended" rowSpan="5">
-        <div>
+      <td className="risk-calculator--recommended" rowSpan="5">
+        <div className="spacer">
         {props.incorrectAmountFormat
           ? <p className="risk-calculator--recommended-error color-error">Please use only positive digits or zero when entering current amounts. Please enter all inputs correctly.</p>
           : steps.map((step, index) => {

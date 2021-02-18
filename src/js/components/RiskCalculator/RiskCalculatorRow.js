@@ -20,7 +20,7 @@ const RiskCalculatorRow = (props) => {
             {uppercaseFirstLetter(unCamelCase(props.category))} $:
           </label>
         </td>
-        <td className="mid-col">
+        <td>
           <input type="text" 
             id={props.category + "CurrentAmount"}
             className="highlight-animation text-right" 
@@ -28,13 +28,13 @@ const RiskCalculatorRow = (props) => {
             value={props.currentValue} 
             autoComplete="off" />
         </td>
-        <td className="mid-col">
+        <td>
           <input type="text" 
             className={"text-right " + (Math.sign(props.difference) >= 0 ? "color-success" : "color-error") } 
             value={formatAmountDifference(props.difference)} 
             disabled />
         </td>
-        <td className="mid-col">
+        <td>
           <input type="text" 
             className="color-info text-right" 
             value={props.recommendedValue} 

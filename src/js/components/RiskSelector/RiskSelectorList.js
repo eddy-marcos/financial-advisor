@@ -7,7 +7,7 @@ const RiskSelectorList = () => {
   const activeRiskLevel = useSelector(state => state.riskLevels.activeRiskLevel);
 
   return (
-    <ul className="risk-factor--list grid-x no-bullet align-middle">
+    <ul className="risk-factor--list grid-x no-bullet align-middle button-group">
       {
         riskLevels.map((level, index) => {
           return <RiskSelectorListItem 
