@@ -141,7 +141,7 @@ const RiskCalculator = () => {
               <th className="text-center" colSpan="2" >Current Amount</th>
               <th className="text-center">Difference</th>
               <th className="text-center">New Amount</th>
-              <th className="text-center">Recommended Transfers</th>
+              <th className="text-center desktop-header">Recommended Transfers</th>
             </tr>
           </thead>
           <tbody>

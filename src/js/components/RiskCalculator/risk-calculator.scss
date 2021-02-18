@@ -20,6 +20,22 @@
     
     .risk-calculator--table {
   
+      @media screen and (max-width: 48em) {
+        position: relative;
+      }
+
+      .desktop-header {
+        @media screen and (max-width: 48em) {
+          position: absolute;
+          left: 0;
+          bottom: -62px;
+        }
+      }
+
+      th {
+        padding: 10px;
+      }
+
       input { 
         margin: 0;
       }
@@ -47,20 +63,32 @@
     }
   
     .risk-calculator--recommended {
-      position: relative;
-      & > div {
-        position: absolute;
-        top: 8px;
-        bottom: 8px;
-        width: calc(100% - #{8px * 2});
-        border: 1px solid black;
-        border-radius: 5px;
+      position: absolute;
+      width: calc(100% - #{8px * 2});
+      border: 1px solid black;
+      border-radius: 5px;
+
+      @media screen and (max-width: 48em) {
+        top: 460px;
+        height: 250px;
+        width: 70%;
+        left: 0;
+
+        .spacer {
+          height: 18rem;
+        }
+      }
+
+      @media screen and (min-width: 48em) {
+        position: relative;
+      }
+
         .risk-calculator--recommended-item {
           margin-top: 10px;
           margin-left: 5px;
           font-size: 0.9rem;
         }
-      }
+
       .risk-calculator--recommended-error {
         margin: 10px 5px;
       }

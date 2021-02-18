@@ -2,6 +2,8 @@
 .risk-factor-select {
     .risk-factor--list {
       margin-bottom: 0;
+      justify-content: center;
+
       li.button {
         font-size: 1.1rem;
         margin: 2px;
@@ -9,9 +11,10 @@
         align-items: center;
         justify-content: center;
         font-weight: 400;
+        width: 45px;
         
-        @media screen and (min-width: 40em) {
-          width: 54px;
+        @media screen and (min-width: 48em) {
+          width: 60px;
           font-size: 1.5rem;
         }  
       }
