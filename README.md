@@ -20,7 +20,3 @@ run:
 
 and that's it, I hope you like it : )
 
-
-demo video:
-https://youtu.be/45rV_yyTcig
-
